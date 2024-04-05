@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.intersection div {
+  background-color: #ddd;
+}
+
+.intersection div.traffic-light-container {
+  background-color: transparent;
+}
+
+.intersection .empty {
+  background-color: transparent;
+  border: none;
+}
+
+.street-block {
+  width: 200px;
+}
+
+.street-block.north-south {
+  display: flex;
+}
+
+.street-block.east-west {
+  display: block;
+}
+
+.lane.north-south:not(:last-child) {
+  width: 50px;
+  margin: auto 0;
+  height: 100%;
+  background-image: linear-gradient(black 33%, rgba(255,255,255,0) 0%);
+  background-position: right;
+  background-size: 2px 30px;
+  background-repeat: repeat-y;
+}
+
+.lane.south {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.lane.east {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.lane.east-west:not(:last-child) {
+  width: 100%;
+  margin: 0 auto;
+  height: 50px;
+  background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
+  background-position: bottom;
+  background-size: 30px 2px;
+  background-repeat: repeat-x;
+}
+
+.border-left {
+  border-left: 1px solid #aaa;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #aaa;
+}
+
+.border-top {
+  border-top: 1px solid #aaa;
+}
+
+.border-right {
+  border-right: 1px solid #aaa;
+}
+
+/* Traffic light colors */
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  justify-content:  center;
+}
+
+.traffic-light-container {
+  background-color: #000 !important;
+  border-radius: 7px;
+  display:flex;
+  padding: 10px;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.traffic-light-container.north {
+  flex-direction: column;
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 60px;
+}
+
+.traffic-light-container.south {
+  flex-direction: column-reverse;
+  /* margin-left: 130px; */
+  margin-top: 5px;
+  width: 60px;
+}
+
+.traffic-light-container.east {
+  flex-direction: row-reverse;
+  margin-right: 10px;
+  margin-top: 5px;
+  height: 60px;
+}
+
+.traffic-light-container.west {
+  flex-direction: row;
+  margin-left: 10px;
+  /* margin-top: 130px; */
+  height: 60px;
+}
+
+.traffic-light {
+  --size: 35px;
+  background-color: #555;
+  border-radius: var(--size);
+  height: var(--size);
+  width: var(--size);
+}
+
+.traffic-light svg {
+  margin: 10px;
+}
+
+.lane svg {
+  margin: 15px;
+  color: black;
+}
+
+.traffic-block {
+  display: flex;
+  background-color: #1A202C !important;
+}
+
+.traffic-block div {
+  background-color: #1A202C;
+}
+
+.traffic-block.north {
+  flex-direction: row;
+}
+
+.traffic-block.north div {
+  padding-right: 35px;
+}
+
+.traffic-block.west {
+  flex-direction: column-reverse
+}
+
+.traffic-block.south {
+  flex-direction: row-reverse;
+}
+
+.traffic-block.south div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.traffic-block.east {
+  flex-direction: column;
+}
+
+.traffic-block.east div {
+  display: flex;
+  flex-direction: row-reverse;
+}
